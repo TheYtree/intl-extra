@@ -236,6 +236,10 @@ final class IntlExtension extends AbstractExtension
         }
 
         try {
+            if ($language == 'zh_CN')
+                return "中文简体";
+            if ($language == 'zh_TW')
+                return "中文繁體";
             return Languages::getName($language, $locale);
         } catch (MissingResourceException $exception) {
             return $language;
